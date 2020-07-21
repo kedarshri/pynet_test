@@ -1,0 +1,11 @@
+"""Write a program to expand the string 'a2b5c6de7' to 'aabbbbbccccccdedededededede'. it is ok to use regex module"""
+
+
+import re
+
+def expand_the_string(s):
+    s = re.findall('([^0-9]+)(\d+)',s)
+    print(s)
+    return "".join(c*int(d) for (c,d) in s)
+
+print(expand('a2b5c6de7'))
